@@ -1,0 +1,67 @@
+event_id,name,event_type,venue,date,start_time,end_time,expected_attendance,status
+EV001,Navratri Garba - Night 1,navratri,GMDC,2024-10-03,21:00,23:59,20357,completed
+EV002,Navratri Garba - Night 2,navratri,GMDC,2024-10-04,21:00,23:59,25595,completed
+EV003,Navratri Garba - Night 3,navratri,GMDC,2024-10-05,21:00,23:59,35618,completed
+EV004,Navratri Garba - Night 4,navratri,GMDC,2024-10-06,21:00,23:59,37255,completed
+EV005,Navratri Garba - Night 5,navratri,GMDC,2024-10-07,21:00,23:59,31732,completed
+EV006,Navratri Garba - Night 6,navratri,GMDC,2024-10-08,21:00,23:59,35934,completed
+EV007,Navratri Garba - Night 7,navratri,GMDC,2024-10-09,21:00,23:59,35343,completed
+EV008,Navratri Garba - Night 8,navratri,GMDC,2024-10-10,21:00,23:59,40289,completed
+EV009,Navratri Garba - Night 9,navratri,GMDC,2024-10-11,21:00,23:59,40805,completed
+EV010,International Kite Festival 2025 - Day 1,riverfront,RIVERFRONT,2025-01-10,10:00,19:00,45000,completed
+EV011,International Kite Festival 2025 - Day 2,riverfront,RIVERFRONT,2025-01-11,10:00,19:00,50000,completed
+EV012,International Kite Festival 2025 - Day 3,riverfront,RIVERFRONT,2025-01-12,10:00,19:00,55000,completed
+EV013,International Kite Festival 2025 - Day 4,riverfront,RIVERFRONT,2025-01-13,10:00,19:00,60000,completed
+EV014,International Kite Festival 2025 - Day 5,riverfront,RIVERFRONT,2025-01-14,10:00,19:00,65000,completed
+EV015,Coldplay - Music of the Spheres (Day 1),concert,NMS,2025-01-25,18:30,22:30,100000,completed
+EV016,Coldplay - Music of the Spheres (Day 2),concert,NMS,2025-01-26,18:30,22:30,105000,completed
+EV017,India vs England ODI,cricket,NMS,2025-02-12,13:30,21:30,90000,completed
+EV018,IPL 2025 - Home Match 1,cricket,NMS,2025-03-30,19:30,23:15,96817,completed
+EV019,IPL 2025 - Home Match 2,cricket,NMS,2025-04-06,19:30,23:15,95108,completed
+EV020,IPL 2025 - Home Match 3,cricket,NMS,2025-04-13,15:30,19:15,78474,completed
+EV021,IPL 2025 - Home Match 4,cricket,NMS,2025-04-22,19:30,23:15,102982,completed
+EV022,IPL 2025 - Home Match 5,cricket,NMS,2025-04-29,19:30,23:15,102449,completed
+EV023,IPL 2025 - Home Match 6,cricket,NMS,2025-05-09,15:30,19:15,81428,completed
+EV024,IPL 2025 - Home Match 7,cricket,NMS,2025-05-16,19:30,23:15,89974,completed
+EV025,IPL 2025 Final,cricket,NMS,2025-06-01,19:30,23:30,115000,completed
+EV026,Independence Day Celebration 2025,riverfront,RIVERFRONT,2025-08-15,18:00,21:30,40000,completed
+EV027,Navratri Garba - Night 1,navratri,GMDC,2025-09-22,21:00,23:59,20376,completed
+EV028,Navratri Garba - Night 2,navratri,GMDC,2025-09-23,21:00,23:59,24605,completed
+EV029,Navratri Garba - Night 3,navratri,GMDC,2025-09-24,21:00,23:59,28902,completed
+EV030,Navratri Garba - Night 4,navratri,GMDC,2025-09-25,21:00,23:59,30443,completed
+EV031,Navratri Garba - Night 5,navratri,GMDC,2025-09-26,21:00,23:59,33044,completed
+EV032,Navratri Garba - Night 6,navratri,GMDC,2025-09-27,21:00,23:59,43369,completed
+EV033,Navratri Garba - Night 7,navratri,GMDC,2025-09-28,21:00,23:59,46144,completed
+EV034,Navratri Garba - Night 8,navratri,GMDC,2025-09-29,21:00,23:59,39552,completed
+EV035,Navratri Garba - Night 9,navratri,GMDC,2025-09-30,21:00,23:59,40512,completed
+EV036,Riverfront Diwali Lights Fest,riverfront,RIVERFRONT,2025-10-20,18:30,22:30,50000,completed
+EV037,India vs Australia T20,cricket,NMS,2025-11-23,19:00,22:30,100000,completed
+EV038,Arijit Singh Live,concert,NMS,2025-12-20,19:00,22:45,70000,completed
+EV039,Riverfront New Year Eve,riverfront,RIVERFRONT,2025-12-31,20:00,23:59,60000,completed
+EV040,International Kite Festival 2026 - Day 1,riverfront,RIVERFRONT,2026-01-10,10:00,19:00,45000,completed
+EV041,International Kite Festival 2026 - Day 2,riverfront,RIVERFRONT,2026-01-11,10:00,19:00,50000,completed
+EV042,International Kite Festival 2026 - Day 3,riverfront,RIVERFRONT,2026-01-12,10:00,19:00,55000,completed
+EV043,International Kite Festival 2026 - Day 4,riverfront,RIVERFRONT,2026-01-13,10:00,19:00,60000,completed
+EV044,International Kite Festival 2026 - Day 5,riverfront,RIVERFRONT,2026-01-14,10:00,19:00,65000,completed
+EV045,IPL 2026 - Home Match 1,cricket,NMS,2026-03-30,19:30,23:15,99609,completed
+EV046,IPL 2026 - Home Match 2,cricket,NMS,2026-04-06,19:30,23:15,88222,completed
+EV047,IPL 2026 - Home Match 3,cricket,NMS,2026-04-15,15:30,19:15,84130,completed
+EV048,IPL 2026 - Home Match 4,cricket,NMS,2026-04-23,19:30,23:15,99202,completed
+EV049,IPL 2026 - Home Match 5,cricket,NMS,2026-05-01,19:30,23:15,100678,completed
+EV050,IPL 2026 - Home Match 6,cricket,NMS,2026-05-07,15:30,19:15,82822,completed
+EV051,IPL 2026 - Home Match 7,cricket,NMS,2026-05-16,19:30,23:15,95960,completed
+EV052,IPL 2026 Final,cricket,NMS,2026-06-01,19:30,23:30,115000,completed
+EV053,Independence Day Celebration 2026,riverfront,RIVERFRONT,2026-08-15,18:00,21:30,40000,completed
+EV054,Navratri Garba - Night 1,navratri,GMDC,2026-10-11,21:00,23:59,31358,scheduled
+EV055,Navratri Garba - Night 2,navratri,GMDC,2026-10-12,21:00,23:59,24301,scheduled
+EV056,Navratri Garba - Night 3,navratri,GMDC,2026-10-13,21:00,23:59,27001,scheduled
+EV057,Navratri Garba - Night 4,navratri,GMDC,2026-10-14,21:00,23:59,28983,scheduled
+EV058,Navratri Garba - Night 5,navratri,GMDC,2026-10-15,21:00,23:59,30730,scheduled
+EV059,Navratri Garba - Night 6,navratri,GMDC,2026-10-16,21:00,23:59,36207,scheduled
+EV060,Navratri Garba - Night 7,navratri,GMDC,2026-10-17,21:00,23:59,46126,scheduled
+EV061,Navratri Garba - Night 8,navratri,GMDC,2026-10-18,21:00,23:59,48075,scheduled
+EV062,Navratri Garba - Night 9,navratri,GMDC,2026-10-19,21:00,23:59,41609,scheduled
+EV063,Riverfront Diwali Lights Fest,riverfront,RIVERFRONT,2026-11-08,18:30,22:30,55000,scheduled
+EV064,India vs South Africa ODI,cricket,NMS,2026-11-22,13:30,21:30,95000,scheduled
+EV065,India vs New Zealand T20,cricket,NMS,2026-12-13,19:00,22:30,105000,scheduled
+EV066,New Year Music Festival,concert,NMS,2026-12-31,20:00,23:59,80000,scheduled

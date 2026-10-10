@@ -1,0 +1,9 @@
+station,name,line,hourly_capacity,paid_area_capacity,num_gates
+MOTERA,Motera Stadium,Red Line (N-S),9000,2500,4
+SABARMATI,Sabarmati,Red Line (N-S),8000,2000,3
+GUJ_UNI,Gujarat University,Blue Line (E-W),8500,2200,4
+OLD_HC,Old High Court (Interchange),Blue + Red interchange,12000,3500,4
+GANDHIGRAM,Gandhigram,Red Line (N-S),7500,1800,3
+KALUPUR,Kalupur Railway Station,Blue Line (E-W),12000,3000,3
+THALTEJ,Thaltej,Blue Line (E-W),8000,2000,2
+APMC,APMC,Red Line (N-S),8000,2000,2

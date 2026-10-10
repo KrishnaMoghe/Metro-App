@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stadium Surge · Metro Crowd Command</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">M</div>
+    <div>
+      <h1>Stadium Surge</h1>
+      <p>Event crowd command for Ahmedabad Metro · PS-05</p>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <span id="today" class="pill"></span>
+    <span id="mode" class="pill ok">● Live: ML model</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="plan">① Event Crowd Plan</button>
+  <button class="tab" data-tab="forecast">② Rush-Hour Forecast (ML)</button>
+  <button class="tab" data-tab="model">③ Model &amp; Data</button>
+</nav>
+
+<main>
+<!-- ================= PLAN TAB ================= -->
+<section id="tab-plan" class="tabpane active">
+  <div class="grid-plan">
+    <aside class="card form">
+      <h2>Event details</h2>
+      <label>Pick a scheduled event
+        <select id="evPick"><option value="">— custom event —</option></select>
+      </label>
+      <label>Event name <input id="evName" value="India vs New Zealand T20"></label>
+      <div class="row2">
+        <label>Type <select id="evType"></select></label>
+        <label>Date <input id="evDate" type="date" value="2026-12-13"></label>
+      </div>
+      <label>Venue <select id="evVenue"></select></label>
+      <label>Expected attendance <input id="evAtt" type="number" value="105000" step="1000"></label>
+      <div class="row2">
+        <label>Start time <input id="evStart" type="time" value="19:00"></label>
+        <label>End time <input id="evEnd" type="time" value="22:30"></label>
+      </div>
+      <button id="btnPlan" class="primary">Generate crowd plan →</button>
+      <p class="hint">Sim engine: 1-minute steps of street queue → gates → paid area → trains. Uses gate throughput, train capacity &amp; holding-area limits for each station.</p>
+    </aside>
+
+    <div class="plan-out">
+      <div id="kpis" class="kpis"></div>
+
+      <div class="card">
+        <div class="card-h">
+          <h3>Minute-by-minute crowd at <span id="stName"></span></h3>
+          <span class="legend-note">With plan vs. no plan (normal headway, 2 gates, no metering)</span>
+        </div>
+        <div class="chartbox"><canvas id="minuteChart"></canvas></div>
+        <div id="compare" class="compare"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-h"><h3>Action timeline</h3>
+            <div class="filters" id="tlFilters"></div>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </div>
+        <div class="col-stack">
+          <div class="card">
+            <div class="card-h"><h3>Announcement scripts</h3>
+              <div class="langs">
+                <button class="lang active" data-lang="gu">ગુજરાતી</button>
+                <button class="lang" data-lang="hi">हिन्दी</button>
+                <button class="lang" data-lang="en">English</button>
+              </div>
+            </div>
+            <div id="annList"></div>
+          </div>
+          <div class="card">
+            <h3>Nearby stations</h3>
+            <div id="others"></div>
+          </div>
+          <div class="card">
+            <h3>ML hourly forecast · event day</h3>
+            <div class="chartbox small"><canvas id="dayChart"></canvas></div>
+            <div id="dayRush" class="chips"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORECAST TAB ================= -->
+<section id="tab-forecast" class="tabpane">
+  <div class="card">
+    <div class="card-h">
+      <h3>When will the rush hit? Hour-by-hour forecast</h3>
+      <div class="inline-form">
+        <select id="fcStation"></select>
+        <input type="date" id="fcDate">
+        <button id="btnFc" class="primary sm">Forecast</button>
+      </div>
+    </div>
+    <div id="fcInfo" class="chips"></div>
+    <div class="chartbox"><canvas id="fcChart"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-h">
+      <h3>Rush calendar: next 14 days</h3>
+      <div class="lvl-legend"><span class="lv low">low</span><span class="lv moderate">moderate</span><span class="lv high">high</span><span class="lv critical">critical</span></div>
+    </div>
+    <p class="hint">Each cell = predicted footfall for that hour vs. station hourly capacity. Click a day to open its forecast.</p>
+    <div class="heat-wrap"><div id="heat"></div></div>
+  </div>
+  <div class="card">
+    <h3>Upcoming events</h3>
+    <div class="tablewrap"><table id="upcoming"></table></div>
+  </div>
+</section>
+
+<!-- ================= MODEL TAB ================= -->
+<section id="tab-model" class="tabpane">
+  <div class="two-col">
+    <div class="card">
+      <h3>How it works</h3>
+      <ol class="flow">
+        <li><b>Data</b>: 2 years of hourly footfall for 8 stations (112k rows) plus an event calendar of 66 events (cricket, concerts, Navratri, riverfront). The data is synthetic, generated from commute patterns and event crowd curves.</li>
+        <li><b>Features</b>: station, hour, weekday, month, holiday, event type, expected metro riders at the station, minutes to event start, minutes after event end.</li>
+        <li><b>Model</b>: Gradient-Boosted Trees (scikit-learn <code>HistGradientBoostingRegressor</code>) predict footfall per station per hour. Train/test split is by time: the last 3 months are held out.</li>
+        <li><b>Rush detection</b>: forecast ÷ station hourly capacity → low / moderate / high / critical.</li>
+        <li><b>Planner</b>: 1-minute simulation of the egress surge. It picks the train headway, opens gates when arrivals exceed gate throughput, meters entry when the paid area passes 85%, and activates holding zones as the street queue grows.</li>
+        <li><b>Output</b>: an action timeline plus announcement scripts in Gujarati, Hindi and English (with text-to-speech).</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Model performance (held-out data)</h3>
+      <div id="metrics" class="kpis"></div>
+      <h4>Feature importance (permutation)</h4>
+      <div id="fi"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Prototype · synthetic data · Built for PS-05 "The Stadium Surge"</footer>
+
+<script src="fallback.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "model": "HistGradientBoostingRegressor (scikit-learn)",
+  "train_rows": 96976,
+  "test_rows": 15352,
+  "test_period": "2026-07-01 .. 2026-10-09",
+  "mae": 134.1,
+  "r2": 0.9205,
+  "event_hours_mae": 255.3,
+  "feature_importance": {
+    "min_from_end": 0.9895,
+    "station_idx": 0.3142,
+    "min_to_start": 0.18,
+    "hour": 0.1757,
+    "event_riders": 0.1698,
+    "in_event": 0.0903,
+    "dow": 0.0455,
+    "month": 0.0157,
+    "is_holiday": 0.0076,
+    "event_type_idx": 0.004,
+    "is_weekend": 0.0
+  }
+}
